@@ -40,7 +40,7 @@ String get groqKey {
   if (envKey.isNotEmpty) return envKey;
   try {
     return utf8.decode(
-      base64.decode('Z3NrX2ZHUEJmZFJBTnliRlNSYlJjVktXR2R5YjNZUUI5MXJBSEhocnUwcG03d1Mya0RjU0c='),
+      base64.decode('c2stb3ItdjEtMjMwMmQzMGNkNzU3ZTJmZDJmYmMxMjM1OWQxY2NiMjZjMGJlODE1MzllYzdkZjI0YjRlZTY4ZGVjYzMxNGEyYg=='),
     );
   } catch (_) {
     return '';
