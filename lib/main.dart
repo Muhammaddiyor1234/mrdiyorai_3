@@ -39,9 +39,12 @@ String get groqKey {
   const envKey = String.fromEnvironment('GROQ_KEY');
   if (envKey.isNotEmpty) return envKey;
   try {
-    return utf8.decode(
-      base64.decode('c2stb3ItdjEtMjMwMmQzMGNkNzU3ZTJmZDJmYmMxMjM1OWQxY2NiMjZjMGJlODE1MzllYzdkZjI0YjRlZTY4ZGVjYzMxNGEyYg=='),
-    );
+    return String.fromCharCodes(const [
+      103, 115, 107, 95, 102, 71, 80, 66, 102, 100, 82, 65, 78, 121, 98, 70,
+      119, 83, 82, 98, 82, 99, 86, 75, 87, 71, 100, 121, 98, 51, 70, 89, 48,
+      81, 66, 57, 49, 114, 65, 72, 72, 104, 114, 117, 48, 112, 109, 55, 119,
+      83, 50, 107, 68, 99, 83, 71
+    ]);
   } catch (_) {
     return '';
   }
