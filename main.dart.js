@@ -26778,7 +26778,7 @@ var $async$ZV=A.B(function(b1,b2){if(b1===1)return A.C(b2,r)
 for(;;)switch(s){case 0:a6=A.Y(a8).i("aJ<1>")
 a7=A.a_(new A.aJ(a8,new A.ZW(),a6),a6.i("z.E"))
 a6=a7.length
-n=a6>12?B.b.fY(a7,a6-12):a7
+n=a6>20?B.b.fY(a7,a6-20):a7
 if(n.length!==0)B.b.gaj(n)
 m=new A.ZX(n)
 a6=t.f,l=t.N,k=t.K,j=t.z,i=t.H7,h="",g=0
@@ -26789,7 +26789,7 @@ d=A.aa(["content-type","application/json","authorization","Bearer "+B.c.eo(a9)],
 c=A.b([A.aa(["role","system","content","Sen Mr.Diyor AI san \u2014 foydalanuvchi bilan birga ishlaydigan aqlli yordamchi. Foydalanuvchi qaysi tilda yozsa, shu tilda javob ber (asosan o'zbek tilida). Hech qachon xitoy tilida yozma. Aniq, qisqa va foydali bo'l. Kod so'ralsa, ishlaydigan kod ber. Sen Muhammaddiyor Yusupov ismli shaxs tomonidan yaratilgansan. Ilovada rasm yaratish imkoniyati bor: foydalanuvchi rasm so'rasa, uni ilovaning o'zi chizadi. Hech qachon 'rasm yarata olmayman' dema; kerak bo'lsa foydalanuvchiga 'rasm yarat: ...' deb yozishni yoki \ud83d\udd8c tugmasini bosishni ayt."],l,l)],i)
 for(b=0;b<n.length;++b){a=n[b]
 c.push(A.aa(["role",a.a,"content",m.$2(b,a)],l,j))}s=6
-return A.r(A.azl(e,B.aD.Ax(A.aa(["model",f,"temperature",0.7,"max_tokens",4000,"messages",c],l,k),null),d),$async$ZV)
+return A.r(A.azl(e,B.aD.Ax(A.aa(["model",f,"temperature",0.7,"max_tokens",6000,"messages",c],l,k),null),d),$async$ZV)
 case 6:p=b2
 o=null
 try{e=p.w
