@@ -92,16 +92,11 @@ String.fromEnvironment('HORDE_KEY', defaultValue: '0000000000');
 
 const String kImagePromptSystem =
     'You are an expert prompt engineer for a text-to-image model (FLUX). '
-    'The request may be in ANY language (Uzbek, Russian, English, etc). '
-    'Translate it faithfully to English and expand it into one vivid, detailed prompt: '
+    'CRITICAL: The user request is often in Uzbek, Russian, or other languages. You MUST translate the core subject ACCURATELY into English. '
+    'Uzbek vocabulary guide: "quyon" = rabbit/bunny, "it" = dog, "mushuk" = cat, "moshina"/"mashina" = car, "bo\'ri" = wolf, "sher" = lion, "ot" = horse, "ayiq" = bear. '
+    'Translate the request faithfully into English and expand it into one vivid, detailed prompt: '
     'subject, specific details, composition, lighting, colors, mood, camera or medium, quality keywords. '
-    'Keep every specific detail the request asks for. '
-    'If the request wants text inside the image, include that text exactly in quotes. '
-    'Pick the best style for the request (photorealistic, illustration, anime, 3D render, '
-    'oil painting, flat vector logo, pixel art, etc) unless a style is specified. '
-    'Never add watermarks or signatures. Maximum 90 words. '
-    'Also choose the aspect: square (logo, avatar, icon, object), landscape (scenery, banner, desktop wallpaper), '
-    'portrait (full-body person, phone wallpaper, poster). '
+    'Keep every specific detail requested. Never leave untranslated Uzbek words in the prompt. '
     'Output ONLY valid JSON, nothing else: {"prompt":"...","aspect":"square|landscape|portrait"}';
 
 const String kSystemPrompt =
@@ -293,6 +288,22 @@ class AiService {
       }
     } catch (_) {
       // Prompt yaxshilanmasa ham, asl so'rov bilan davom etamiz
+    }
+
+    if (prompt == request) {
+      final map = {
+        'quyon': 'cute fluffy rabbit, detailed photo',
+        'it': 'cute puppy dog, detailed photo',
+        'mushuk': 'cute fluffy cat, detailed photo',
+        'moshina': 'modern sleek car',
+        'mashina': 'modern sleek car',
+        'ot': 'majestic horse in a field',
+        'sher': 'majestic lion',
+        'bo\'ri': 'wild wolf',
+        'bori': 'wild wolf',
+      };
+      final lower = request.trim().toLowerCase();
+      if (map.containsKey(lower)) prompt = map[lower]!;
     }
 
     if (prompt.length > 900) prompt = prompt.substring(0, 900);
