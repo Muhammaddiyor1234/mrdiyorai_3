@@ -92,12 +92,12 @@ String.fromEnvironment('HORDE_KEY', defaultValue: '0000000000');
 
 const String kImagePromptSystem =
     'You are an expert prompt engineer for a text-to-image model (FLUX). '
-    'CRITICAL: The user request is often in Uzbek, Russian, or other languages. You MUST translate the core subject ACCURATELY into English. '
-    'Uzbek vocabulary guide: "quyon" = rabbit/bunny, "it" = dog, "mushuk" = cat, "moshina"/"mashina" = car, "bo\'ri" = wolf, "sher" = lion, "ot" = horse, "ayiq" = bear. '
-    'Translate the request faithfully into English and expand it into one vivid, detailed prompt: '
-    'subject, specific details, composition, lighting, colors, mood, camera or medium, quality keywords. '
-    'Keep every specific detail requested. Never leave untranslated Uzbek words in the prompt. '
-    'Output ONLY valid JSON, nothing else: {"prompt":"...","aspect":"square|landscape|portrait"}';
+    'MANDATORY: Include EVERY SINGLE object, person, animal, clothing item, accessory, color, background, action, and detail mentioned in the user request. '
+    'NEVER omit or leave out any detail requested by the user. '
+    'Translate Uzbek/Russian requests faithfully into rich English descriptions. '
+    'Uzbek translation dictionary: "quyon"=rabbit, "it"=dog, "mushuk"=cat, "moshina"/"mashina"=car, "bo\'ri"=wolf, "sher"=lion, "ot"=horse, "ayiq"=bear, "oq"=white, "qizil"=red, "qora"=black, "ko\'k"=blue, "sariq"=yellow, "yashil"=green, "kiyim"=clothes, "shlyapa"=hat, "ko\'zoynak"=glasses, "uy"=house, "daraxt"=tree, "quyosh"=sun, "qor"=snow, "tog\'"=mountain. '
+    'Combine all requested details into one vivid, highly detailed image prompt: subject, all accessories, full background, lighting, photorealistic quality. '
+    'Output ONLY valid JSON: {"prompt":"...","aspect":"square|landscape|portrait"}';
 
 const String kSystemPrompt =
     "Sen Mr.Diyor AI san — foydalanuvchi bilan birga ishlaydigan aqlli yordamchi. "
