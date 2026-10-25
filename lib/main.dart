@@ -57,14 +57,11 @@ const List<String> kModels = [kQwenModel];
 // Rasm uchun ham faqat Qwen (u rasm tushunishni qo'llaydi)
 const List<String> kVisionModels = [kQwenModel];
 
-// Groq BEPUL reja (qwen/qwen3.8-27b): 30 so'rov/daqiqa, 1 000 so'rov/kun,
-// 8 000 token/daqiqa, 200 000 token/kun.
-// Modelning texnik maksimumi 16 384, lekin bepul rejada daqiqalik limit 8 000
-// bo'lgani uchun katta qiymat so'rovni rad ettirishi mumkin. Shuning uchun 4 000.
-const int kMaxTokens = 4000;
+// Groq BEPUL reja uchun eng yuqori va xavfsiz maksimal limitlar:
+const int kMaxTokens = 6000;
 
-// Suhbat tarixidan oxirgi nechta xabar yuboriladi (token tejash uchun)
-const int kHistoryLimit = 12;
+// Suhbat tarixidan oxirgi nechta xabar yuboriladi (eslab qolish xotirasi oshirildi)
+const int kHistoryLimit = 20;
 
 const String kGroqUrl = 'https://api.groq.com/openai/v1/chat/completions';
 
